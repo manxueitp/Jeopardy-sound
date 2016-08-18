@@ -11,7 +11,7 @@ void setup () {
   //launch(params);
       
 //=====================Serial====================//
-  String portName = "/dev/cu.usbmodem1421";
+  String portName = "/dev/cu.usbmodem411";
   printArray(Serial.list());
   myPort = new Serial(this, portName, 9600);
   myPort.clear();
@@ -35,14 +35,4 @@ void draw()
         launch(params);
     }
   }
-}
-
-void serialEvent( Serial myPort) {
-  // read a byte from the serial port:
-     //myPort.write('A');
-     String input = myPort.readString();
-   
-     String[] numbers = split(input, ',');
-   
-     myPort.write('A');
 }
